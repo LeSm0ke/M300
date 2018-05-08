@@ -63,6 +63,16 @@ EXPOSE 80
 </code></pre>
 <p>Dies Funktioniert ebenfalls</p>
 <p><img src="https://perrone.myqnapcloud.com:450/share.cgi/4_PHP%20done.PNG?ssid=02YbC2K&amp;fid=02YbC2K&amp;path=%2FNeuer%20Ordner&amp;filename=4_PHP%20done.PNG&amp;openfolder=normal&amp;ep=" alt="BILD 4"></p>
+<h2 id="cadvisor">cAdvisor</h2>
+<p>Wir haben cAdvisor mit folgendem Befehl installiert:</p>
+<pre><code>docker run -d --name cadvisor -v /:/rootfs:ro -v /var/run:/var/run:rw -v /sys:/sys:ro -v /var/lib/docker/:/var/lib/docker:ro -p 8080:8080 google/cadvisor:latest
+</code></pre>
+<p><img src="https://perrone.myqnapcloud.com:450/share.cgi/5_cAdvisor.PNG?ssid=02YbC2K&amp;fid=02YbC2K&amp;path=%2F&amp;filename=5_cAdvisor.PNG&amp;openfolder=normal&amp;ep=" alt="asb"></p>
+<h2 id="eigene-benutzer">Eigene Benutzer</h2>
+<p>Durch die Eingabe von in das Dockerfile konnten wir einen neuen Benutzer namens <code>user</code> . Somit können wir diesen Andere rechte Geben.</p>
+<pre><code>RUN groupadd -r user_grp &amp;&amp; useradd -r -g user_grp user USER user
+</code></pre>
+<p><img src="https://perrone.myqnapcloud.com:450/share.cgi/6_Benutzer.PNG?ssid=02YbC2K&amp;fid=02YbC2K&amp;path=%2F&amp;filename=6_Benutzer.PNG&amp;openfolder=normal&amp;ep=" alt=""></p>
 <h2 id="testing">Testing</h2>
 <p>Um das Testing durchzuführen haben wir verschiedene Testcases aufgeschrieben und nach diesen Fällen die Tests druchgeführt.<br>
 Dokumentiert wurde ebenfalls das erwartete und das tatsächliche Ergebnis festgehalten.</p>
